@@ -415,10 +415,13 @@ class App extends Component {
         <Route
           path="/event/:id"
           exact
-          render={(props) => (<InviteePage id={props.match.params.id}/>)}
+          render={(props) => <div ref={this.viewportWidthRef} className="App">
+            <InviteePage id={props.match.params.id}/>)
+          </div>}
         />
         <Route
           path="/confirmed/:event"
+          exact
           render={(props) => <div ref={this.viewportWidthRef} className="App">
               <InviteeConfirmed data={props}/>
             </div>}
