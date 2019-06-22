@@ -64,6 +64,9 @@ export default class CreateEvent extends Component {
             <option className="create_timezone_selection-option" value="MST">
               MST
             </option>
+            <option className="create_timezone_selection-option" value="CST">
+              CST
+            </option>
             <option className="create_timezone_selection-option" value="EST">
               EST
             </option>
@@ -142,7 +145,7 @@ export default class CreateEvent extends Component {
             onClick={() => this.props.createdEvent()}
             className="create_event"
           >
-            Create Event
+            set availability
           </button>
         </Link>
         <Creds />

@@ -174,6 +174,28 @@ class App extends Component {
       table: tables[0],
       mobileTable: tables[1],
     })
+    var activeuser = {
+      name: this.state.yourName,
+      email: this.state.yourEmail
+    }
+    var body = { "activeuser" : activeuser }
+    var api = backend_url + 'activeuser'
+    fetch(api, {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers:{
+          'Content-Type': 'application/json'
+        },
+      }).then(function(response) {
+        return response.json()
+      }).then(function(data) {
+        console.log('Posted state id:', data.id)
+      }).catch(error => {
+        console.log(error)
+        this.setState({
+          error: true
+        })
+      })
   }
 
   onSelectWindow = value => {
@@ -396,7 +418,7 @@ class App extends Component {
                           type="button"
                           disabled={this.state.selection.length === 0}
                           onClick={() => this.createCalendarEvent()}>
-                    Submit times
+                    submit times
                   </button>
                 </Link>
               </div>
@@ -426,6 +448,13 @@ class App extends Component {
               <InviteeConfirmed data={props}/>
             </div>}
         />
+        <Route
+          path="/about"
+          exact
+          component={() => {
+            window.location.href = 'https://sharp-hypatia-c3340c.netlify.com/';
+            return null;
+          }}/>
         <Route
           path="/error"
           exact
