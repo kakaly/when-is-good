@@ -38,7 +38,7 @@ class EventCreated extends Component {
           <p>You can share this URL with your invitees:</p>
           <a
             className="sharing_link"
-            href={`https://determined-noyce-425a82.netlify.com/event/${this.props.eventCode}`}
+            href={`https://imfree.fyi/event/${this.props.eventCode}`}
           >{`https://imfree.fyi/event/${this.props.eventCode}`}</a>
         </div>
       </div>
