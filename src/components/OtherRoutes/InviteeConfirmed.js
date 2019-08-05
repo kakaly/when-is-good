@@ -35,6 +35,7 @@ class InviteeConfirmed extends Component {
         <div className="sharing">
           <p>Great! Your meeting is booked</p>
           <p>Look for a meeting invite on your inbox and add it to your calendar</p>
+          <p>Don't forget to check your spam folders just incase!</p>
         </div>
       </div>) : <Redirect to='/' />
     )
