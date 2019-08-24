@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import Slider from 'rc-slider'
 import CalendarIcon from 'components/calendar/CalendarIcon'
 import Creds from 'components/Creds'
+import 'moment-timezone'
+import moment from 'moment'
 // TODO: Future Feature
 // import Toggle from 'react-toggle';
 // import EmailIncluded from './EmailIncluded';
@@ -69,30 +71,12 @@ export default class CreateEvent extends Component {
             onChange={this.props.onTimezoneChange}
             value={this.props.timezone}
           >
-            <option className="create_timezone_selection-option" value="PST">
-              PST
-            </option>
-            <option className="create_timezone_selection-option" value="MST">
-              MST
-            </option>
-            <option className="create_timezone_selection-option" value="CST">
-              CST
-            </option>
-            <option className="create_timezone_selection-option" value="EST">
-              EST
-            </option>
-            <option className="create_timezone_selection-option" value="WET">
-              WET
-            </option>
-            <option className="create_timezone_selection-option" value="CET">
-              CET
-            </option>
-            <option className="create_timezone_selection-option" value="EET">
-              EET
-            </option>
-            <option className="create_timezone_selection-option" value="FET">
-              FET
-            </option>
+            {moment.tz.names().map((tz, index) => {
+              return(
+              <option className="create_timezone_selection-option" key={index} value={`${tz}`}>
+                {tz}
+              </option>)
+            })}
           </select>
         </div>
         <div className="create_shouldEmail">
