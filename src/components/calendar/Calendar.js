@@ -1,5 +1,5 @@
-import React from 'react'
-import TimeSelect from 'components/calendar/timeSelect/TimeSelect'
+import React from 'react';
+import TimeSelect from 'components/calendar/timeSelect/TimeSelect';
 
 const Calendar = props => {
   return (
@@ -8,6 +8,7 @@ const Calendar = props => {
         creatorTimezone={props.creatorTimezone}
         inviteeTimezone={props.inviteeTimezone}
         dates={props.dates}
+        isInviteePage={props.isInviteePage}
         mobileTable={props.mobileTable}
         window={props.window}
         table={props.table}
@@ -15,7 +16,7 @@ const Calendar = props => {
         vw={props.vw}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Calendar
+export default Calendar;
